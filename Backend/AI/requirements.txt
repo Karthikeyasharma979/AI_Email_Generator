@@ -1,0 +1,3 @@
+smolagents
+liteLLM
+dotenv
