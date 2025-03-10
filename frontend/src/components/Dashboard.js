@@ -1,4 +1,3 @@
-// src/components/Dashboard.js
 import React, { useState } from "react";
 import axios from "axios";
 import { auth } from "../firebase";
@@ -28,23 +27,13 @@ export default function Dashboard() {
     }
 
     setLoading(true);
-    const apiKey = "AIzaSyDdEYmAxUxArgAHpRXBVPp7W-7r300gJCg"; // Replace with your Gemini API key
-    const endpoint =
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+    const endpoint = "http://127.0.0.1:5000/search"; // Replace with your Flask API endpoint
 
     try {
       const response = await axios.post(
-        `${endpoint}?key=${apiKey}`,
+        endpoint,
         {
-          contents: [
-            {
-              parts: [
-                {
-                  text: `Write a formal email based on this: ${inputText}`,
-                },
-              ],
-            },
-          ],
+          query: inputText,
         },
         {
           headers: { "Content-Type": "application/json" },
@@ -52,7 +41,7 @@ export default function Dashboard() {
       );
 
       // Adjust based on the actual API response structure.
-      const generatedText = response.data.candidates[0].content.parts[0].text;
+      const generatedText = response.data.output;
       setGeneratedEmail(generatedText);
       setHistory((prev) => [
         ...prev,
