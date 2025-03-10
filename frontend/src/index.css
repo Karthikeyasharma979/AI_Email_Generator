@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --primary-bg: #141e30;
+  --secondary-bg: #243b55;
+  --accent: #1abc9c;
+  --highlight: #16a085;
+  --text-color: #ecf0f1;
+  --error-color: #e74c3c;
+  --transition: 0.3s;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Page Styles with a Mesmerizing Gradient Background */
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Fade In Animation for Containers */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dashboard Container with Glassmorphism Effect */
+.dashboard-container {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+  animation: fadeInUp 0.5s ease-out;
+  backdrop-filter: blur(5px);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background: var(--accent);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition) ease,
+    transform var(--transition) ease, box-shadow var(--transition) ease;
+}
+
+.logout-btn:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  background: var(--secondary-bg);
+  border: 1px solid var(--accent);
+  color: var(--text-color);
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color var(--transition) ease,
+    box-shadow var(--transition) ease;
+  margin-bottom: 15px;
+}
+
+textarea:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 8px rgba(22, 160, 133, 0.5);
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+button {
+  background: var(--accent);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background var(--transition) ease,
+    transform var(--transition) ease, box-shadow var(--transition) ease;
+  min-width: 120px;
+}
+
+button:hover {
+  background: var(--highlight);
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  background: #6c7a8c;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Generated Email Display */
+.generated-email {
+  background: var(--secondary-bg);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+  white-space: pre-wrap;
+  transition: transform var(--transition) ease;
+}
+
+.generated-email:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* History Section */
+.history {
+  margin-top: 30px;
+}
+
+.history-item {
+  background: var(--secondary-bg);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform var(--transition) ease,
+    box-shadow var(--transition) ease;
+}
+
+.history-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Auth Container (Login & Register) with Glass Effect */
+.auth-container {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  margin: 20px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease-out;
+  backdrop-filter: blur(5px);
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container input {
+  padding: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--secondary-bg);
+  color: var(--text-color);
+  font-size: 16px;
+  transition: border-color var(--transition) ease,
+    box-shadow var(--transition) ease;
+}
+
+.auth-container input:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 8px rgba(22, 160, 133, 0.5);
+}
+
+.auth-container button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--text-color);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background var(--transition) ease,
+    transform var(--transition) ease, box-shadow var(--transition) ease;
+}
+
+.auth-container button:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Error Message */
+.error {
+  background: var(--error-color);
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Flash Message (Toast) for Interactive Feedback */
+.flash-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--text-color);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-20px);
+  z-index: 1000;
+  animation: slideIn 0.5s forwards, slideOut 0.5s forwards 3s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+
+  .dashboard-container,
+  .auth-container {
+    padding: 30px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
