@@ -80,6 +80,33 @@ export default function Dashboard() {
     }
   };
 
+  const redirectToMail = async () => {
+    if (generatedEmail) {
+      const endpoint = "http://127.0.0.1:5000/open"; // Replace with your Flask API endpoint for redirect
+  
+      try {
+        const response = await axios.post(
+          endpoint,
+          {
+            to: "dummy@gmail.com",
+            body:inputText,
+            type:"mail"
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+  
+        // Assuming the endpoint returns a URL to redirect to
+        const redirectUrl = response.data.url;
+        window.location.href = redirectUrl;
+      } catch (error) {
+        console.error("Error redirecting to mail:", error);
+        alert("Failed to redirect to mail. Please try again.");
+      }
+    }
+  };
+
   return (
     <div className="dashboard-container">
       <div className="header">
@@ -105,6 +132,9 @@ export default function Dashboard() {
           Download Email
         </button>
         <button onClick={clearFields}>Clear</button>
+        <button onClick={redirectToMail} disabled={!generatedEmail}>
+          Redirect to Mail
+        </button>
       </div>
       <h3>Generated Email:</h3>
       <div className="generated-email">

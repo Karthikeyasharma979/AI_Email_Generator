@@ -5,6 +5,7 @@ from Agent import AI
 from flask_cors import CORS
 from Resources import WebLinks_Generator,WebYoutubeGenerator
 from Humanize import Humanize
+from Mail import Tools
 app = Flask(__name__)
 CORS(app)
 
@@ -22,6 +23,22 @@ def search_api():
     result = AI(query)
     return jsonify({"input": query, "output": result, "status": "success"}),200
 
+
+@app.route("/open", methods=["POST"])
+def open():
+    data = request.get_json()
+    if not data:
+        return jsonify({"error": "Empty input", "status": 300}), 300
+    
+    if not isinstance(data, dict):
+        return jsonify({"error": "Invalid input format", "status": 300}), 300
+
+    if "type" not in data:
+        return jsonify({"error": "Type is required", "status": 300}), 300
+
+    tools_instance = Tools()
+    result = tools_instance.forward(**data)  # Call the forward method with the data arguments
+    return jsonify({"input": data, "output": result, "status": "success"}), 200
 
 
 @app.route("/webResources", methods=["POST"])

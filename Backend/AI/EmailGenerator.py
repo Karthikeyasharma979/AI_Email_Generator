@@ -25,13 +25,6 @@ class EmailGenerator(tools.Tool):
     name = "EmailGenerator"
     description = (
         "This tool generates professional and well-structured emails based on the user's request. "
-        "It can create emails for job applications, meeting requests, follow-ups, formal communication, "
-        "and other professional scenarios. Users should provide a brief description of their email request, "
-        "such as:\n"
-        "- 'Write a formal resignation email.'\n"
-        "- 'Draft an email to request feedback on my recent project.'\n"
-        "- 'Generate an email to thank an interviewer for their time.'\n"
-        "The tool ensures that the emails are clear, professional, and appropriate for the given context."
     )
 
     inputs = {
@@ -50,19 +43,10 @@ class EmailGenerator(tools.Tool):
         super().__init__()
 
     def forward(self, prompt: str) -> str:
-        """
-        Generates a professional email based on the provided prompt.
-
-        Args:
-            prompt (str): A short description of the email's purpose and content.
-
-        Returns:
-            str: A professionally written email, or an error message if generation fails.
-        """
         try:
             genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
             model = genai.GenerativeModel("gemini-1.5-pro")  # Use a Gemini model for text generation
-            response = model.generate_content(f"Write a professional email for the following request: {prompt}")
+            response = model.generate_content("write a email to "+prompt)
             return response.text.strip()
         except Exception as e:
             return f"Error: {str(e)}"

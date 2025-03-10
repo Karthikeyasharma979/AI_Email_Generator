@@ -1,0 +1,129 @@
+/* src/components/Dashboard.css */
+.dashboard-container {
+    font-family: 'Georgia', serif; /* Classic serif font */
+    background-color: #f9f9f9; /* Light background color */
+    color: #333; /* Dark text color for readability */
+    padding: 30px; /* Increased padding around the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 600px; /* Maximum width of the container */
+    margin: 40px auto; /* Center the container */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+.header {
+    display: flex; /* Flexbox for header layout */
+    justify-content: space-between; /* Space between title and buttons */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 30px; /* Space below the header */
+}
+
+h2 {
+    font-size: 28px; /* Font size for the title */
+    margin: 0; /* Remove default margin */
+    color: #ebf0f3; /* Change color for the heading */
+}
+
+h3 {
+    font-size: 24px; /* Font size for the subheading */
+    margin: 20px 0; /* Space above and below the subheading */
+    color: #f3f4f4; /* Change color for the generated email heading */
+}
+
+.logout-btn {
+    background-color: #c0392b; /* Red background for logout button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.logout-btn:hover {
+    background-color: #a93226; /* Darker red on hover */
+}
+
+textarea {
+    width: 100%; /* Full width */
+    padding: 15px; /* Padding inside the textarea */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below the textarea */
+    font-size: 16px; /* Font size for the textarea */
+    resize: none; /* Disable resizing */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.button-group {
+    display: flex; /* Flexbox for button layout */
+    justify-content: space-between; /* Space between buttons */
+    margin-bottom: 30px; /* Space below the button group */
+}
+
+button {
+    background-color: #2980b9; /* Blue background for buttons */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #1f6391; /* Darker blue on hover */
+}
+
+.generated-email {
+    margin-bottom: 20px; /* Space below the generated email area */
+    padding: 15px; /* Padding inside the generated email area */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background */
+}
+
+.icon-group {
+    display: flex; /* Flexbox for icon layout */
+    align-items: center; /* Center icons vertically */
+    margin-bottom: 10px; /* Space below the icons */
+}
+
+.copy-symbol, .edit-symbol {
+    display: inline-block; /* Inline block for proper spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 24px; /* Size of the icons */
+    margin-right: 15px; /* Space between icons */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.copy-symbol:hover, .edit-symbol:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+.email-content {
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 10px; /* Padding inside the editable area */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    min-height: 100px; /* Minimum height for the editable area */
+    cursor: text; /* Text cursor when hovering */
+}
+
+.email-content:focus {
+    outline: none; /* Remove default outline on focus */
+    border-color: #2980b9; /* Change border color on focus */
+}
+
+.history {
+    margin-top: 30px; /* Space above the history section */
+    border-top: 1px solid #ccc; /* Top border for separation */
+    padding-top: 20px; /* Padding above the history items */
+}
+
+.history-item {
+    margin-bottom: 15px; /* Space below each history item */
+    padding: 15px; /* Padding inside each history item */
+    border: 1px solid #eaeaea; /* Light border for history items */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f2f2f2; /* Light gray background for history items */
+}

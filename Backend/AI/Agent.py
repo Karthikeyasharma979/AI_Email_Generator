@@ -1,6 +1,7 @@
 from smolagents import CodeAgent,LiteLLMModel,HfApiModel,ToolCallingAgent
 from Resources import WebLinks_Generator,WebYoutubeGenerator
 from EmailGenerator import EmailGenerator
+from Mail import Tools
 from Summarization import Summarization
 from dotenv import load_dotenv
 load_dotenv()
@@ -75,44 +76,6 @@ Follow structured guidelines for **accurate, professional, and efficient respons
 
 ---
 
-## **🔹 Example Email Generation Scenarios**
-
-### **Example 1: Leave Request Email**
-**User Input:** "I need to request leave for three days (March 15-17) due to personal reasons."  
-✅ **Generated Email:**
-Subject: Request for Leave (March 15-17) - [Your Name]
-
-Dear [Recipient's Name],
-
-I hope this email finds you well. I am writing to formally request leave for three days, from March 15 to March 17, due to personal reasons.
-
-I have ensured that all my current tasks are on track, and I am happy to provide any necessary handovers before my leave. Please let me know if any further details are required.
-
-Thank you for your time and understanding. I appreciate your consideration.
-
-Best regards,
-[Your Name]
-
-
----
-
-### **Example 2: Job Application Email**
-**User Input:** "I want to apply for a Software Engineer role at XYZ Company."  
-✅ **Generated Email:**
-Subject: Application for Software Engineer Position - [Your Name]
-
-Dear Hiring Manager,
-
-I am excited to apply for the Software Engineer position at XYZ Company. With a strong background in [mention key skills], I am eager to contribute to your team’s success.
-
-Attached is my resume for your review. I would love the opportunity to discuss how my skills align with the role. Please let me know if there is a convenient time to connect.
-
-Thank you for your time and consideration. Looking forward to your response.
-
-Best regards,
-[Your Name]
-[Your Contact Information]
-
 🔹 5. Humanization (Humizie) Guidelines
 Enhance Natural Flow
 
@@ -161,11 +124,10 @@ Now, generate a **high-quality response** based on the user's request.
 }
 
 
-agent = ToolCallingAgent(model=model,tools=[EmailGenerator(),Summarization(),WebLinks_Generator(),WebYoutubeGenerator()],prompt_templates= DEEP_AI_PROMPT)
-
+agent = ToolCallingAgent(model=model,tools=[EmailGenerator(),Summarization(),WebLinks_Generator(),WebYoutubeGenerator()],prompt_templates=DEEP_AI_PROMPT)
 def AI(input:str)->str:
     response = (agent.run(input))
     return response
 
 
-# AI("Give me a referce links how to write a email to principal")
+# AI("how to write a email to principal")
