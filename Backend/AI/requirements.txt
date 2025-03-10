@@ -1,3 +1,5 @@
 smolagents
 liteLLM
 dotenv
+# transformers
+google-generativeai
