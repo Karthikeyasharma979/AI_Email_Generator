@@ -2,10 +2,11 @@ import sys
 import os
 from flask import Flask, request, jsonify
 from Agent import AI
+from flask_cors import CORS
 from Resources import WebLinks_Generator,WebYoutubeGenerator
 from Humanize import Humanize
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/search", methods=["POST"])
 def search_api():

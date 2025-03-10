@@ -3,3 +3,4 @@ liteLLM
 dotenv
 # transformers
 google-generativeai
+flask-cors

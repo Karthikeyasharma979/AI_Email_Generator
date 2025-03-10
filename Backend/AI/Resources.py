@@ -83,9 +83,7 @@ class WebYoutubeGenerator(tools.Tool):
         youtube_pattern = r"https?://(?:www\.)?(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)[\w-]+"
         return re.findall(youtube_pattern, text)
 
-# Example Usage
-# yt_generator = WebYoutubeGenerator()
-# print(yt_generator.forward("How to write an email"))
+
 
 
 class WebLinks_Generator(tools.Tool):
@@ -167,12 +165,11 @@ class WebLinks_Generator(tools.Tool):
         web_pattern = r"https?://[^\s\]\)]+"
         return re.findall(web_pattern, text)
 
+
+
 # Example Usage
 # web_links_gen = WebLinks_Generator()
-
 # print(web_links_gen.forward("Best practices for writing professional emails"))
-
-
 # Example Usage
 # yt_generator = WebYoutubeGenerator()
 # print(yt_generator.forward("How to write an email to hr"))
